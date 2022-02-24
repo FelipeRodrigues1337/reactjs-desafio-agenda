@@ -1,3 +1,3 @@
-const fullImageUrl = `http://localhost:3333/files`;
+const fullImageUrl = process.env.REACT_APP_API_URL;
 
 export default fullImageUrl;
