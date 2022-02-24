@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
 import { Header, Form } from "./styles";
 import api from "../../services/api";
@@ -8,6 +8,7 @@ const CreateContact: React.FC = () => {
   const [fName, setName] = useState("");
   const [fEmail, setEmail] = useState("");
   const [fTel, setTel] = useState("");
+  const history = useHistory();
 
   async function handleAddRepository() {
     const response = await api.post("/users", {
@@ -15,12 +16,7 @@ const CreateContact: React.FC = () => {
       email: fEmail,
       telefone: fTel,
     });
-
-    if (response) {
-      alert("Adicionado com sucesso");
-    } else {
-      alert("Erro ao cadastrar");
-    }
+    history.push("/");
   }
 
   return (
