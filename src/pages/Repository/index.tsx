@@ -32,6 +32,10 @@ const Repository: React.FC = () => {
     });
   }, [params.repository]);
 
+  function reload() {
+    window.location.reload();
+  }
+
   async function handleUpdateRepository() {
     const response = await api.put(`/users/update/${params.repository}`, {
       name: fName,
@@ -51,6 +55,7 @@ const Repository: React.FC = () => {
       const data = new FormData();
       data.append("avatar", e.target.files[0]);
       api.patch(`/users/avatar/${params.repository}`, data).then();
+      reload();
     }
   }
 
