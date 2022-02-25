@@ -54,7 +54,6 @@ const Repository: React.FC = () => {
     if (e.target.files) {
       const data = new FormData();
       data.append("avatar", e.target.files[0]);
-      1;
       api
         .patch(`/users/avatar/${params.repository}`, data)
         .then(() => history.push("/"));
