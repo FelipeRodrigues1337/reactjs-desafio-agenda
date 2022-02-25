@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
-import { Header, Form } from "./styles";
+import { Header, Form, Button } from "./styles";
 import api from "../../services/api";
 
 const CreateContact: React.FC = () => {
@@ -10,18 +10,18 @@ const CreateContact: React.FC = () => {
   const [fTel, setTel] = useState("");
   const history = useHistory();
 
-  function pushToDashboard() {
-    history.push("/");
-  }
-
   async function handleAddRepository() {
-    await api
-      .post("/users", {
-        name: fName,
-        email: fEmail,
-        telefone: fTel,
-      })
-      .then();
+    const response = await api.post(`/users`, {
+      name: fName,
+      email: fEmail,
+      telefone: fTel,
+    });
+    if (response) {
+      alert("Cadastrado com sucesso! 🔥");
+    } else {
+      alert("Erro ao cadastrar ❄");
+    }
+    history.push("/");
   }
 
   return (
@@ -33,7 +33,7 @@ const CreateContact: React.FC = () => {
         </Link>
       </Header>
       <h1>Cadastrar Contato</h1>
-      <Form onSubmit={handleAddRepository}>
+      <Form>
         <input
           type="text"
           value={fName}
@@ -55,10 +55,10 @@ const CreateContact: React.FC = () => {
           placeholder="Digite o Telefone do contato"
           required
         />
-        <button type="submit" onClick={pushToDashboard}>
-          Enviar
-        </button>
       </Form>
+      <Button className="btn-submit" onClick={handleAddRepository}>
+        Enviar
+      </Button>
     </>
   );
 };

@@ -132,27 +132,6 @@ export const Form = styled.form`
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
   }
-
-  button {
-    margin-top: 5%;
-    margin-left: 40%;
-    background-color: #3f9d17;
-    border: solid 1px;
-    font-size: 19px;
-    color: white;
-    font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 30px;
-    padding-left: 30px;
-    -moz-border-radius: 9px;
-    -webkit-border-radius: 9px;
-    border-radius: 19px;
-  }
-
-  button:hover {
-    background-color: #56c41f;
-  }
 `;
 
 export const AvatarInput = styled.div`
@@ -173,5 +152,26 @@ export const AvatarInput = styled.div`
     &:hover {
       background: #ffb13d;
     }
+  }
+`;
+
+export const Button = styled.button`
+  margin-top: 2%;
+  margin-left: 40%;
+  background-color: #3f9d17;
+  border: solid 1px;
+  font-size: 19px;
+  color: white;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+  border-radius: 19px;
+
+  &:hover {
+    background-color: #56c41f;
   }
 `;

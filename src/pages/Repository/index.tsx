@@ -1,7 +1,7 @@
 import React, { useEffect, useState, ChangeEvent } from "react";
 import { useRouteMatch, Link, useHistory } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
-import { Header, RepositoryInfo, Form, AvatarInput } from "./styles";
+import { Header, RepositoryInfo, Form, AvatarInput, Button } from "./styles";
 import api from "../../services/api";
 import fullImageUrl from "../../services/avatarBaseURL";
 import defaultAvatar from "../../assets/defaultAvatar.png";
@@ -38,12 +38,12 @@ const Repository: React.FC = () => {
       email: fEmail,
       telefone: fTel,
     });
-
     if (response) {
       alert("Atualizado com sucesso! 🔥");
     } else {
       alert("Erro ao atualizar ❄");
     }
+    window.location.reload();
   }
 
   async function handleAvatarUpdate(e: ChangeEvent<HTMLInputElement>) {
@@ -52,7 +52,7 @@ const Repository: React.FC = () => {
       data.append("avatar", e.target.files[0]);
       api
         .patch(`/users/avatar/${params.repository}`, data)
-        .then(() => history.push(`/repositories/${params.repository}`));
+        .then(() => history.push("/"));
     }
   }
 
@@ -96,11 +96,11 @@ const Repository: React.FC = () => {
           <ul>
             <li>
               <strong>{contact.name}</strong>
-              <span>Nome</span>
+              <p>Nome</p>
             </li>
             <li>
               <strong>{contact.email}</strong>
-              <span>E-mail</span>
+              <span>Email</span>
             </li>
             <li>
               <strong>{contact.telefone}</strong>
@@ -112,9 +112,8 @@ const Repository: React.FC = () => {
               </button>
             </li>
           </ul>
-
           <h1>Atualizar Contato</h1>
-          <Form onSubmit={handleUpdateRepository}>
+          <Form>
             <input
               type="text"
               value={fName}
@@ -136,12 +135,11 @@ const Repository: React.FC = () => {
               placeholder="Telefone"
               required
             />
-            <button type="submit">Atualizar</button>
           </Form>
+          <Button onClick={handleUpdateRepository}>Atualizar</Button>
         </RepositoryInfo>
       )}
     </>
   );
 };
-
 export default Repository;
