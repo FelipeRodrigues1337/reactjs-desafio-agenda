@@ -34,7 +34,7 @@ const CreateContact: React.FC = () => {
         </Link>
       </Header>
       <h1>Cadastrar Contato</h1>
-      <Form onSubmit={handleAddRepository}>
+      <Form>
         <input
           type="text"
           value={fName}
