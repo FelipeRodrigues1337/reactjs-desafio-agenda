@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
 import { Header, Form } from "./styles";
 import api from "../../services/api";
-import { AxiosResponse } from "axios";
 
 const CreateContact: React.FC = () => {
   const [fName, setName] = useState("");
@@ -12,7 +11,6 @@ const CreateContact: React.FC = () => {
   const history = useHistory();
 
   function pushToDashboard() {
-    alert("Cadastrado com sucesso!");
     history.push("/");
   }
 
@@ -24,6 +22,7 @@ const CreateContact: React.FC = () => {
         telefone: fTel,
       })
       .then();
+      pushToDashboard();
   }
 
   return (

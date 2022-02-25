@@ -58,14 +58,14 @@ export const RepositoryInfo = styled.section`
 
     li {
       & + li {
-        margin-left: 40px;
+        margin-left: 25px;
       }
     }
 
     li {
       strong {
         display: block;
-        font-size: 36px;
+        font-size: 25px;
         color: #3d3d4d;
       }
 
