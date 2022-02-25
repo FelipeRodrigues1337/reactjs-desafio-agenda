@@ -11,18 +11,19 @@ const CreateContact: React.FC = () => {
   const [fTel, setTel] = useState("");
   const history = useHistory();
 
-  async function handleAddRepository() {
-    const response = await api.post("/users", {
-      name: fName,
-      email: fEmail,
-      telefone: fTel,
-    });
-    if (response) {
-      alert("Contato cadastrado com sucesso!!");
-    } else {
-      alert("Falha no cadastro!");
-    }
+  function pushToDashboard() {
     history.push("/");
+  }
+
+  async function handleAddRepository() {
+    await api
+      .post("/users", {
+        name: fName,
+        email: fEmail,
+        telefone: fTel,
+      })
+      .then();
+    pushToDashboard();
   }
 
   return (
