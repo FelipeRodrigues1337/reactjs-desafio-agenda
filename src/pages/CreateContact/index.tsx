@@ -12,6 +12,7 @@ const CreateContact: React.FC = () => {
   const history = useHistory();
 
   function pushToDashboard() {
+    alert("Cadastrado com sucesso!");
     history.push("/");
   }
 
@@ -23,7 +24,6 @@ const CreateContact: React.FC = () => {
         telefone: fTel,
       })
       .then();
-    pushToDashboard();
   }
 
   return (
@@ -35,7 +35,7 @@ const CreateContact: React.FC = () => {
         </Link>
       </Header>
       <h1>Cadastrar Contato</h1>
-      <Form>
+      <Form onSubmit={handleAddRepository}>
         <input
           type="text"
           value={fName}
@@ -57,7 +57,9 @@ const CreateContact: React.FC = () => {
           placeholder="Digite o Telefone do contato"
           required
         />
-        <button onClick={handleAddRepository}>Enviar</button>
+        <button type="submit" onClick={pushToDashboard}>
+          Enviar
+        </button>
       </Form>
     </>
   );
