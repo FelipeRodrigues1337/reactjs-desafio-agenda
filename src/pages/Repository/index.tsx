@@ -96,11 +96,11 @@ const Repository: React.FC = () => {
           <ul>
             <li>
               <strong>{contact.name}</strong>
-              <p>Nome</p>
+              <span>Nome</span>
             </li>
             <li>
               <strong>{contact.email}</strong>
-              <span>Email</span>
+              <span>E-mail</span>
             </li>
             <li>
               <strong>{contact.telefone}</strong>
