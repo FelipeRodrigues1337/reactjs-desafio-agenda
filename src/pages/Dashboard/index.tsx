@@ -31,7 +31,7 @@ const Dashboard: React.FC = () => {
     <>
       <img src={Logo} alt="Agenda" />
       <Title>Lista de Contatos</Title>
-
+      {/* https://gotech.tech */}
       <Contacts>
         <Link to={`/create`} className="link-create">
           <h2>Adicionar</h2>
@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
           <Link key={contact.id} to={`/repositories/${contact.id}`}>
             {contact.avatar ? (
               <img
-                src={`${fullImageUrl}/${contact.avatar}`}
+                src={`${fullImageUrl}/files/${contact.avatar}`}
                 alt="Foto do contato"
               />
             ) : (
