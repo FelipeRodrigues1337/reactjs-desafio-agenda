@@ -10,13 +10,17 @@ const CreateContact: React.FC = () => {
   const [fTel, setTel] = useState("");
   const history = useHistory();
 
+  function pushToDashboard(){
+    history.push("/");
+  }
+
   async function handleAddRepository() {
     const response = await api.post("/users", {
       name: fName,
       email: fEmail,
       telefone: fTel,
     });
-    history.push("/");
+    pushToDashboard();
   }
 
   return (
@@ -50,7 +54,7 @@ const CreateContact: React.FC = () => {
           placeholder="Digite o Telefone do contato"
           required
         />
-        <button type="submit">Enviar</button>
+        <button type="submit" onClick={pushToDashboard}>Enviar</button>
       </Form>
     </>
   );

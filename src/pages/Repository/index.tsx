@@ -73,7 +73,7 @@ const Repository: React.FC = () => {
             <div className="avatar-block">
               {contact.avatar ? (
                 <img
-                  src={`${fullImageUrl}/${contact.avatar}`}
+                  src={`${fullImageUrl}/files/${contact.avatar}`}
                   alt="Foto do contato"
                 />
               ) : (

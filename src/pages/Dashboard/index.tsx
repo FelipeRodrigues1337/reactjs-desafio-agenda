@@ -31,7 +31,6 @@ const Dashboard: React.FC = () => {
     <>
       <img src={Logo} alt="Agenda" />
       <Title>Lista de Contatos</Title>
-      {/* https://gotech.tech */}
       <Contacts>
         <Link to={`/create`} className="link-create">
           <h2>Adicionar</h2>
