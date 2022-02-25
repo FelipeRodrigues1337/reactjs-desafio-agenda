@@ -15,5 +15,5 @@ Este projeto em ReactJS foi criado juntamente a um back-end em Nodejs e SQL com 
 
 **Rodar projeto**
 - Instalar dependências: yarn 📚
-- Abrir pasta service e configurar variavel de ambiente que são utilizadas pelos arquivos .env e avatarBaseURL 👀
+- Configurar variavel de ambiente no arquivo .env que é utilizada pelos arquivos (api.ts) e (avatarBaseURL.ts) 👀
 - Rodar projeto: yarn start 🚀
