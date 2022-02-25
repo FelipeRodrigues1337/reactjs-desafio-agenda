@@ -22,7 +22,6 @@ const CreateContact: React.FC = () => {
         telefone: fTel,
       })
       .then();
-      pushToDashboard();
   }
 
   return (
