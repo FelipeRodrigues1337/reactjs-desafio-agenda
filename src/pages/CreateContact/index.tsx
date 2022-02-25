@@ -54,7 +54,7 @@ const CreateContact: React.FC = () => {
           placeholder="Digite o Telefone do contato"
           required
         />
-        <button type="submit" onClick={pushToDashboard}>Enviar</button>
+        <button type="submit">Enviar</button>
       </Form>
     </>
   );
