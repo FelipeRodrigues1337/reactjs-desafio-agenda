@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
-import githubBackground from '../assets/github.svg';
+import githubBackground from "../assets/github.svg";
 
 export default createGlobalStyle`
  *{
@@ -20,9 +20,16 @@ export default createGlobalStyle`
  }
 
  #root{
-    max-width: 960px;
-    margin: 0 auto;
+    margin-left: 15%;
+    margin-right: 15%;
     padding: 40px 20px;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 475px) {
+        margin-left: 0%;
+    margin-right: 0%;
+  }
  }
 
  button{

@@ -95,15 +95,15 @@ const Repository: React.FC = () => {
           </header>
           <ul>
             <li>
-              <strong>{contact.name}</strong>
+              <h2>{contact.name}</h2>
               <span>Nome</span>
             </li>
             <li>
-              <strong>{contact.email}</strong>
+              <h2>{contact.email}</h2>
               <span>E-mail</span>
             </li>
             <li>
-              <strong>{contact.telefone}</strong>
+              <h2>{contact.telefone}</h2>
               <span>Telefone</span>
             </li>
             <li>

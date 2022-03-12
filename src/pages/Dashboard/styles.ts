@@ -67,7 +67,6 @@ export const Error = styled.span`
 
 export const Contacts = styled.div`
   margin-top: 80px;
-  max-width: 700px;
 
   .link-create {
     color: #04d11c;

@@ -33,46 +33,36 @@ export const RepositoryInfo = styled.section`
       height: 120px;
       border-radius: 50%;
     }
-
-    div {
-      margin-left: 24px;
-
-      strong {
-        font-size: 28px;
-        color: #3d3d4d;
-      }
-
-      p {
-        font-size: 18px;
-        color: #737380;
-        margin-top: 4px;
-      }
-    }
   }
 
   ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto 1fr;
     list-style: none;
     margin-top: 40px;
     margin-bottom: 10%;
+    gap: 3em;
 
     li {
-      & + li {
-        margin-left: 25px;
-      }
-    }
-
-    li {
-      strong {
+      h2 {
         display: block;
         font-size: 25px;
         color: #3d3d4d;
       }
-
       span {
         display: block;
         margin-top: 4px;
         color: #6c6c80;
+      }
+    }
+
+    @media only screen and (max-width: 1290px) {
+      display: block;
+      li {
+        margin-top: 1em;
+      }
+      li h2 {
+        font-size: 20px;
       }
     }
   }
@@ -101,10 +91,15 @@ export const RepositoryInfo = styled.section`
 `;
 
 export const Form = styled.form`
-  border: thin solid grey;
-  padding: 2rem;
-  margin: 2rem;
+  margin-top: 2%;
+  border: solid 1px grey;
+  border-radius: 15px;
   display: block;
+  padding: 3%;
+
+  @media only screen and (max-width: 475px) {
+    padding: 5% 10% 5% 10%;
+  }
 
   .formtext {
     position: relative;
@@ -116,14 +111,12 @@ export const Form = styled.form`
   }
 
   input {
-    margin-top: 2%;
+    margin-bottom: 2%;
     background-color: #f3f6f4;
     border: solid 1px #5b5b5b;
     font-size: 19px;
     color: #757575;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
+    border-radius: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
@@ -157,7 +150,6 @@ export const AvatarInput = styled.div`
 
 export const Button = styled.button`
   margin-top: 2%;
-  margin-left: 40%;
   background-color: #3f9d17;
   border: solid 1px;
   font-size: 19px;
